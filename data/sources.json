@@ -1,0 +1,16 @@
+[
+  {
+    "doc_id": "act",
+    "law_name": "예금자보호법",
+    "kind": "법률",
+    "lsi_seq": "277269",
+    "effective_date": "2026-01-02"
+  },
+  {
+    "doc_id": "decree",
+    "law_name": "예금자보호법 시행령",
+    "kind": "대통령령",
+    "lsi_seq": "273001",
+    "effective_date": "2025-09-01"
+  }
+]

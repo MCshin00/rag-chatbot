@@ -1,0 +1,9 @@
+[project]
+name = "rag-chatbot"
+version = "0.1.0"
+description = "예금자보호 법령 기반 RAG 챗봇"
+requires-python = ">=3.14"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "lxml>=6.1.3",
+]
