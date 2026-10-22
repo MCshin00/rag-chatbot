@@ -1,4 +1,19 @@
-.local/
-.venv/
-__pycache__/
+# 환경변수 파일. 예시 파일은 env.example처럼 이 규칙에 걸리지 않는 이름을 쓴다
 .env
+.env.*
+*.env
+*.env.*
+
+# 개인 도구 설정
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 계획·인계 메모(공개하지 않음)
+.local/
