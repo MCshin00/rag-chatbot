@@ -76,6 +76,19 @@ uv run python scripts/fetch_laws.py   # data/sources.json의 법령 HTML을 data
 uv run python scripts/parse_laws.py   # 조문 단위 JSONL을 data/processed/로 만든다
 ```
 
+## 파싱 검증
+
+```bash
+uv sync --locked
+uv run --locked pytest -v
+```
+
+저장된 공식 HTML을 읽어 원문에서 직접 확인한 기대값과 비교한다. 대표 사례는
+시행령 제1조의 항 번호 없는 본문, 제2조의 항·호 소속과 개정 이력 분리,
+법률 제3조의 장·절 경로, 시행령 부칙의 혼입 여부다.
+저장된 JSONL을 정답으로 사용하지 않으며, 원문 다운로드나 모델 호출 없이 실행한다.
+전체 조문 완전성 및 검색·답변 품질 평가는 이 테스트의 범위가 아니다.
+
 ## 데이터
 
 - `data/sources.json`: 수집할 법령과 시행일
