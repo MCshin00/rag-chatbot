@@ -1,0 +1,18 @@
+{
+  "model": "text-embedding-3-large",
+  "with_law_name": true,
+  "started_at": "2026-10-24T11:11:29.290313+00:00",
+  "requests": [
+    {
+      "strategy": "article",
+      "chunks": 132,
+      "tokens": 55560
+    },
+    {
+      "strategy": "fixed",
+      "chunks": 156,
+      "tokens": 63637
+    }
+  ],
+  "cost_usd": 0.01549561
+}

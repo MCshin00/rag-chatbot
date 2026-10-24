@@ -13,12 +13,15 @@ from pydantic import BaseModel, Field
 
 from .config import CHAT_MODEL, MAX_OUTPUT_TOKENS, REASONING_EFFORT
 
-SYSTEM_PROMPT_P1 = """너는 예금자보호법과 같은 법 시행령의 조문만 근거로 예금자 질문에 답하는 안내 도우미다.
+SYSTEM_PROMPT = """너는 예금자보호법과 같은 법 시행령의 조문만 근거로 예금자 질문에 답하는 안내 도우미다.
 
 규칙:
 - 아래에 주어진 조각만 근거로 쓴다. 상식, 예금보험공사 안내, 다른 법률로 보충하지 않는다.
+- 질문의 일상적인 표현이 조문의 어떤 용어에 해당하는지 판단하고, 조문을 질문 상황에 적용해 결론을 말한다.
+- 조각이 질문의 핵심에 답하면 abstain을 false로 하고 결론부터 답한다. 조각으로 확인되지 않는 부분이 있으면 답 안에서 그 부분만 "주어진 조문으로는 확인할 수 없다"고 밝힌다.
+- 결론이 조각으로 확인되지 않는 사실에 달려 있으면 "네/아니요"로 시작하지 말고, 조건을 밝혀 답한다.
+- 질문이 묻는 것(금액, 기한, 보호 여부 등)에 대한 답이 조각에 없으면, 관련된 다른 내용이 있어도 abstain을 true로 하고 answer에 확인할 수 없는 이유를 짧게 쓴다. 이때 보호된다/안 된다고 단정하지 않는다.
 - 답에 쓴 근거 조각의 번호(C1~C5)를 citations에 모두 적는다.
-- 주어진 조각으로 답할 수 없으면 abstain을 true로 하고, answer에 "주어진 조문으로는 확인할 수 없다"는 취지와 이유를 짧게 쓴다. 이때 보호된다/안 된다고 단정하지 않는다.
 - 금액, 조건, 예외는 조문에 적힌 그대로 쓴다.
 - 법률 자문이 아니라 조문 안내다. 한국어로 간결하게 답한다."""
 
@@ -26,7 +29,8 @@ SYSTEM_PROMPT_P1 = """너는 예금자보호법과 같은 법 시행령의 조�
 class Answer(BaseModel):
     answer: str = Field(description="질문에 대한 답. 보류할 때는 확인할 수 없는 이유")
     citations: list[str] = Field(description="근거로 쓴 조각 번호. 예: ['C1', 'C3']")
-    abstain: bool = Field(description="주어진 조각으로 답할 수 없으면 true")
+    abstain: bool = Field(description="질문이 묻는 것에 대한 답이 조각에 없으면 true. "
+                          "일부만 확인되면 false로 하고 답 안에 확인되지 않는 부분을 밝힌다")
 
 
 class State(TypedDict, total=False):
@@ -52,7 +56,7 @@ def make_chat_model():
     )
 
 
-def build_graph(search: Callable[[str, list[float]], list[dict]], chat_model, system_prompt: str = SYSTEM_PROMPT_P1):
+def build_graph(search: Callable[[str, list[float]], list[dict]], chat_model, system_prompt: str = SYSTEM_PROMPT):
     """search: (질문, 질문 벡터) → 상위 k개 조각. chat_model: LangChain 채팅 모델(테스트에서는 가짜)."""
     structured = chat_model.with_structured_output(Answer, method="json_schema", strict=True, include_raw=True)
 

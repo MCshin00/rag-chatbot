@@ -20,7 +20,7 @@ from rag_chatbot import config, store
 from rag_chatbot.corpus import load_corpus
 from rag_chatbot.embedding import QueryCache, count_tokens
 from rag_chatbot.embedding import cost as embedding_cost
-from rag_chatbot.graph import SYSTEM_PROMPT_P1, build_graph, format_context, make_chat_model
+from rag_chatbot.graph import SYSTEM_PROMPT, Answer, build_graph, format_context, make_chat_model
 from rag_chatbot.metrics import article_recall, evidence_coverage
 from rag_chatbot.retrieval import make_search
 
@@ -80,7 +80,7 @@ def main() -> None:
     avg = conn.execute("SELECT avg(length(text)) FROM chunks WHERE model=%s AND strategy=%s",
                        (model, args.strategy)).fetchone()[0]
     sample_ctx = "가" * int(float(avg)) * config.TOP_K
-    in_tokens = count_tokens([SYSTEM_PROMPT_P1, sample_ctx]) + 200
+    in_tokens = count_tokens([SYSTEM_PROMPT, sample_ctx]) + 200
     upper = len(questions) * (in_tokens * CHAT_PRICE["input"] + config.MAX_OUTPUT_TOKENS * CHAT_PRICE["output"]) / 1e6
     q_tokens = count_tokens(missing) if missing else 0
     print(f"문항 {len(questions)}개, 방식 {args.strategy}, 모델 {config.CHAT_MODEL} (effort {config.REASONING_EFFORT})")
@@ -108,7 +108,8 @@ def main() -> None:
         "max_output_tokens": config.MAX_OUTPUT_TOKENS, "top_k": config.TOP_K,
         "embedding_model": model, "embed_with_law_name": config.EMBED_WITH_LAW_NAME,
         "retrieval": config.RETRIEVAL, "hybrid_pool": config.HYBRID_POOL, "rrf_k": config.RRF_K,
-        "prompt_version": config.PROMPT_VERSION, "system_prompt": SYSTEM_PROMPT_P1,
+        "prompt_version": config.PROMPT_VERSION, "system_prompt": SYSTEM_PROMPT,
+        "output_schema": Answer.model_json_schema(),
         "retries": 0, "prices_usd_per_1m": CHAT_PRICE, "price_checked": PRICE_CHECKED,
         "query_embedding_tokens": used, "git": git_state(),
         "started_at": datetime.now(UTC).isoformat(),

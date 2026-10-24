@@ -1,0 +1,37 @@
+{
+  "run_id": "20261024-201757-smoke2-dev-fixed",
+  "strategy": "fixed",
+  "questions_file": "eval/dev_questions.jsonl",
+  "questions_sha256": "a4ae18a86b330c627c2f83dfc01be6459b7449061026597c85dffecce2aab700",
+  "question_ids": [
+    "D01",
+    "D05",
+    "D08",
+    "D13",
+    "D19"
+  ],
+  "chat_model": "gpt-5.4-mini-2026-03-17",
+  "reasoning_effort": "none",
+  "max_output_tokens": 800,
+  "top_k": 5,
+  "embedding_model": "text-embedding-3-large",
+  "embed_with_law_name": true,
+  "retrieval": "hybrid",
+  "hybrid_pool": 20,
+  "rrf_k": 60,
+  "prompt_version": "p1",
+  "system_prompt": "너는 예금자보호법과 같은 법 시행령의 조문만 근거로 예금자 질문에 답하는 안내 도우미다.\n\n규칙:\n- 아래에 주어진 조각만 근거로 쓴다. 상식, 예금보험공사 안내, 다른 법률로 보충하지 않는다.\n- 답에 쓴 근거 조각의 번호(C1~C5)를 citations에 모두 적는다.\n- 주어진 조각으로 답할 수 없으면 abstain을 true로 하고, answer에 \"주어진 조문으로는 확인할 수 없다\"는 취지와 이유를 짧게 쓴다. 이때 보호된다/안 된다고 단정하지 않는다.\n- 금액, 조건, 예외는 조문에 적힌 그대로 쓴다.\n- 법률 자문이 아니라 조문 안내다. 한국어로 간결하게 답한다.",
+  "retries": 0,
+  "prices_usd_per_1m": {
+    "input": 0.75,
+    "cached_input": 0.075,
+    "output": 4.5
+  },
+  "price_checked": "2026-10-24",
+  "query_embedding_tokens": 0,
+  "git": {
+    "commit": "d2957cebb41d483c76bb9fb778908687e9d221e9",
+    "uncommitted_changes": true
+  },
+  "started_at": "2026-10-24T11:17:57.884686+00:00"
+}

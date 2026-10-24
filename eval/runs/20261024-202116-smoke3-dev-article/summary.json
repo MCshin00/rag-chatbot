@@ -1,0 +1,11 @@
+{
+  "calls": 5,
+  "status": {
+    "answer": 5,
+    "coverage:partial": 2,
+    "coverage:full": 2,
+    "coverage:na": 1
+  },
+  "chat_cost_usd": 0.017669249999999997,
+  "finished_at": "2026-10-24T11:21:24.191848+00:00"
+}

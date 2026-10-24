@@ -1,0 +1,1782 @@
+{
+ "at": "2026-10-24T20:11:36.972078",
+ "questions": [
+  "D01",
+  "D02",
+  "D03",
+  "D04",
+  "D05",
+  "D06",
+  "D07",
+  "D08",
+  "D09",
+  "D10",
+  "D11",
+  "D12",
+  "D13",
+  "D14",
+  "D15",
+  "D16"
+ ],
+ "top_k": 5,
+ "hybrid_pool": 20,
+ "rrf_k": 60,
+ "candidates": [
+  {
+   "model": "text-embedding-3-small",
+   "retrieval": "vector",
+   "by_strategy": {
+    "article": {
+     "full": 0,
+     "partial": 4,
+     "none": 12,
+     "recall@5": 0.10416666666666666
+    },
+    "fixed": {
+     "full": 0,
+     "partial": 3,
+     "none": 13,
+     "recall@5": 0.11458333333333333
+    }
+   },
+   "rows": [
+    {
+     "id": "D01",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:decree:8",
+      "article:decree:14의2",
+      "article:act:40",
+      "article:act:24의3",
+      "article:act:39의4"
+     ]
+    },
+    {
+     "id": "D02",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:36의8",
+      "article:act:9의2",
+      "article:act:39",
+      "article:act:39의2",
+      "article:act:39의4"
+     ]
+    },
+    {
+     "id": "D03",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:24의3",
+      "article:act:40",
+      "article:act:24의4",
+      "article:act:32",
+      "article:act:30의3"
+     ]
+    },
+    {
+     "id": "D04",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:24의3",
+      "article:act:24의4",
+      "article:decree:14의2",
+      "article:act:35의6",
+      "article:act:26의3"
+     ]
+    },
+    {
+     "id": "D05",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:36의8",
+      "article:act:24의3",
+      "article:act:26의2",
+      "article:act:35",
+      "article:decree:14의3"
+     ]
+    },
+    {
+     "id": "D06",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:24의4",
+      "article:decree:14",
+      "article:act:35의6",
+      "article:decree:17",
+      "article:decree:14의2"
+     ]
+    },
+    {
+     "id": "D07",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:35의9",
+      "article:act:30의2",
+      "article:act:30",
+      "article:act:40",
+      "article:decree:16의3"
+     ]
+    },
+    {
+     "id": "D08",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:decree:14의2",
+      "article:act:40",
+      "article:act:30의3",
+      "article:act:24",
+      "article:act:30의2"
+     ]
+    },
+    {
+     "id": "D09",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:30의3",
+      "article:decree:14의2",
+      "article:act:33",
+      "article:act:24의3",
+      "article:act:40"
+     ]
+    },
+    {
+     "id": "D10",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:decree:14의2",
+      "article:act:30의5",
+      "article:decree:16",
+      "article:act:24의3",
+      "article:decree:14"
+     ]
+    },
+    {
+     "id": "D11",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "article:act:34",
+      "article:act:33",
+      "article:act:35의4",
+      "article:decree:16의2",
+      "article:decree:17"
+     ]
+    },
+    {
+     "id": "D12",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "article:act:34",
+      "article:decree:14",
+      "article:decree:17",
+      "article:act:24",
+      "article:act:24의4"
+     ]
+    },
+    {
+     "id": "D13",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "article:act:34",
+      "article:act:24의4",
+      "article:decree:14",
+      "article:decree:14의2",
+      "article:decree:17"
+     ]
+    },
+    {
+     "id": "D14",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "article:decree:15의2",
+      "article:decree:24",
+      "article:act:36의8",
+      "article:act:27",
+      "article:act:35의7"
+     ]
+    },
+    {
+     "id": "D15",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:24의3",
+      "article:decree:14의2",
+      "article:decree:15의2",
+      "article:act:35의6",
+      "article:decree:24의6"
+     ]
+    },
+    {
+     "id": "D16",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:30의5",
+      "article:act:26",
+      "article:decree:17",
+      "article:act:37",
+      "article:act:33"
+     ]
+    },
+    {
+     "id": "D01",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:decree:022",
+      "fixed:act:076",
+      "fixed:decree:018",
+      "fixed:act:039"
+     ]
+    },
+    {
+     "id": "D02",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:087",
+      "fixed:act:038",
+      "fixed:act:040",
+      "fixed:act:054",
+      "fixed:act:002"
+     ]
+    },
+    {
+     "id": "D03",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:090",
+      "fixed:decree:028",
+      "fixed:act:040",
+      "fixed:act:039"
+     ]
+    },
+    {
+     "id": "D04",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:039",
+      "fixed:act:037",
+      "fixed:act:040",
+      "fixed:act:054"
+     ]
+    },
+    {
+     "id": "D05",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:039",
+      "fixed:act:002",
+      "fixed:act:040",
+      "fixed:act:037"
+     ]
+    },
+    {
+     "id": "D06",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:decree:018",
+      "fixed:act:004",
+      "fixed:act:002",
+      "fixed:act:039"
+     ]
+    },
+    {
+     "id": "D07",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:057",
+      "fixed:act:069",
+      "fixed:act:054",
+      "fixed:act:070",
+      "fixed:act:052"
+     ]
+    },
+    {
+     "id": "D08",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:040",
+      "fixed:act:039",
+      "fixed:decree:027",
+      "fixed:decree:026"
+     ]
+    },
+    {
+     "id": "D09",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:039",
+      "fixed:act:054",
+      "fixed:decree:027",
+      "fixed:decree:018"
+     ]
+    },
+    {
+     "id": "D10",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:039",
+      "fixed:decree:031",
+      "fixed:decree:018",
+      "fixed:act:004",
+      "fixed:decree:022"
+     ]
+    },
+    {
+     "id": "D11",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:063",
+      "fixed:decree:027",
+      "fixed:decree:032",
+      "fixed:decree:031"
+     ]
+    },
+    {
+     "id": "D12",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "fixed:decree:026",
+      "fixed:decree:027",
+      "fixed:decree:040",
+      "fixed:act:040",
+      "fixed:decree:034"
+     ]
+    },
+    {
+     "id": "D13",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:decree:022",
+      "fixed:decree:039",
+      "fixed:act:038",
+      "fixed:decree:018",
+      "fixed:decree:027"
+     ]
+    },
+    {
+     "id": "D14",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "fixed:decree:001",
+      "fixed:act:050",
+      "fixed:act:072",
+      "fixed:act:000",
+      "fixed:act:066"
+     ]
+    },
+    {
+     "id": "D15",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:decree:037",
+      "fixed:decree:038",
+      "fixed:act:038",
+      "fixed:act:042",
+      "fixed:act:039"
+     ]
+    },
+    {
+     "id": "D16",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:039",
+      "fixed:act:038",
+      "fixed:act:040",
+      "fixed:act:023",
+      "fixed:decree:019"
+     ]
+    }
+   ],
+   "full_total": 0,
+   "recall@5_mean": 0.109375
+  },
+  {
+   "model": "text-embedding-3-large",
+   "retrieval": "vector",
+   "by_strategy": {
+    "article": {
+     "full": 7,
+     "partial": 4,
+     "none": 5,
+     "recall@5": 0.5729166666666666
+    },
+    "fixed": {
+     "full": 2,
+     "partial": 9,
+     "none": 5,
+     "recall@5": 0.6458333333333334
+    }
+   },
+   "rows": [
+    {
+     "id": "D01",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:26",
+      "article:act:26의4",
+      "article:act:38의4",
+      "article:act:24의3",
+      "article:act:24의4"
+     ]
+    },
+    {
+     "id": "D02",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "article:act:26",
+      "article:act:24의3",
+      "article:act:30의3",
+      "article:decree:18",
+      "article:decree:3"
+     ]
+    },
+    {
+     "id": "D03",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:26",
+      "article:decree:18",
+      "article:act:24의3",
+      "article:act:30의3",
+      "article:decree:19의2"
+     ]
+    },
+    {
+     "id": "D04",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:24의3",
+      "article:act:30의3",
+      "article:act:35의6",
+      "article:decree:18",
+      "article:act:26"
+     ]
+    },
+    {
+     "id": "D05",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:3",
+      "article:act:26의2",
+      "article:act:24의2",
+      "article:act:39의2",
+      "article:act:38의3"
+     ]
+    },
+    {
+     "id": "D06",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:decree:3의3",
+      "article:act:1",
+      "article:act:24의3",
+      "article:decree:3",
+      "article:act:26"
+     ]
+    },
+    {
+     "id": "D07",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:30의3",
+      "article:act:35의9",
+      "article:decree:19의2",
+      "article:act:35의8",
+      "article:act:33"
+     ]
+    },
+    {
+     "id": "D08",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:18",
+      "article:act:32",
+      "article:act:40",
+      "article:act:35의6",
+      "article:decree:17"
+     ]
+    },
+    {
+     "id": "D09",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:26",
+      "article:act:35의6",
+      "article:act:35",
+      "article:decree:18",
+      "article:act:31"
+     ]
+    },
+    {
+     "id": "D10",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:38의5",
+      "article:decree:14의2",
+      "article:act:26",
+      "article:act:35의3",
+      "article:decree:12의2"
+     ]
+    },
+    {
+     "id": "D11",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "article:act:31",
+      "article:act:33",
+      "article:act:21의2",
+      "article:act:35의8",
+      "article:act:34"
+     ]
+    },
+    {
+     "id": "D12",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.6666666666666666,
+     "retrieved": [
+      "article:act:31",
+      "article:act:34",
+      "article:act:26",
+      "article:decree:17",
+      "article:act:35의6"
+     ]
+    },
+    {
+     "id": "D13",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.6666666666666666,
+     "retrieved": [
+      "article:act:31",
+      "article:decree:14의2",
+      "article:act:34",
+      "article:decree:18",
+      "article:act:32"
+     ]
+    },
+    {
+     "id": "D14",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:19의2",
+      "article:act:29",
+      "article:decree:17",
+      "article:decree:15의2",
+      "article:decree:18"
+     ]
+    },
+    {
+     "id": "D15",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:39의3",
+      "article:act:24의3",
+      "article:act:31",
+      "article:act:21의2",
+      "article:act:34"
+     ]
+    },
+    {
+     "id": "D16",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:26",
+      "article:act:31",
+      "article:decree:19의2",
+      "article:act:30의3",
+      "article:act:30"
+     ]
+    },
+    {
+     "id": "D01",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "fixed:act:039",
+      "fixed:act:005",
+      "fixed:decree:046",
+      "fixed:decree:021",
+      "fixed:decree:018"
+     ]
+    },
+    {
+     "id": "D02",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.6666666666666666,
+     "retrieved": [
+      "fixed:act:061",
+      "fixed:decree:046",
+      "fixed:act:005",
+      "fixed:act:038",
+      "fixed:decree:048"
+     ]
+    },
+    {
+     "id": "D03",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:decree:046",
+      "fixed:act:061",
+      "fixed:act:039",
+      "fixed:act:038",
+      "fixed:decree:048"
+     ]
+    },
+    {
+     "id": "D04",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:decree:046",
+      "fixed:act:038",
+      "fixed:decree:029",
+      "fixed:decree:044",
+      "fixed:act:061"
+     ]
+    },
+    {
+     "id": "D05",
+     "strategy": "fixed",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:004",
+      "fixed:act:005",
+      "fixed:decree:047",
+      "fixed:decree:003",
+      "fixed:act:045"
+     ]
+    },
+    {
+     "id": "D06",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:005",
+      "fixed:act:038",
+      "fixed:act:004",
+      "fixed:decree:048",
+      "fixed:decree:044"
+     ]
+    },
+    {
+     "id": "D07",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:057",
+      "fixed:act:069",
+      "fixed:act:081",
+      "fixed:act:053",
+      "fixed:act:070"
+     ]
+    },
+    {
+     "id": "D08",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:061",
+      "fixed:decree:046",
+      "fixed:decree:040",
+      "fixed:act:007",
+      "fixed:decree:029"
+     ]
+    },
+    {
+     "id": "D09",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:decree:046",
+      "fixed:act:004",
+      "fixed:act:005",
+      "fixed:act:061",
+      "fixed:act:007"
+     ]
+    },
+    {
+     "id": "D10",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:082",
+      "fixed:act:039",
+      "fixed:decree:022",
+      "fixed:act:005",
+      "fixed:decree:033"
+     ]
+    },
+    {
+     "id": "D11",
+     "strategy": "fixed",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:060",
+      "fixed:act:063",
+      "fixed:act:058",
+      "fixed:act:062",
+      "fixed:decree:040"
+     ]
+    },
+    {
+     "id": "D12",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "fixed:decree:045",
+      "fixed:decree:042",
+      "fixed:act:052",
+      "fixed:act:063",
+      "fixed:act:058"
+     ]
+    },
+    {
+     "id": "D13",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "fixed:act:061",
+      "fixed:decree:045",
+      "fixed:decree:042",
+      "fixed:act:063",
+      "fixed:act:052"
+     ]
+    },
+    {
+     "id": "D14",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "fixed:act:050",
+      "fixed:act:061",
+      "fixed:decree:048",
+      "fixed:decree:040",
+      "fixed:act:005"
+     ]
+    },
+    {
+     "id": "D15",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:007",
+      "fixed:act:089",
+      "fixed:act:024",
+      "fixed:act:088",
+      "fixed:act:062"
+     ]
+    },
+    {
+     "id": "D16",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:decree:045",
+      "fixed:act:061",
+      "fixed:decree:048",
+      "fixed:act:007",
+      "fixed:decree:025"
+     ]
+    }
+   ],
+   "full_total": 9,
+   "recall@5_mean": 0.609375
+  },
+  {
+   "model": "text-embedding-3-small",
+   "retrieval": "hybrid",
+   "by_strategy": {
+    "article": {
+     "full": 5,
+     "partial": 2,
+     "none": 9,
+     "recall@5": 0.375
+    },
+    "fixed": {
+     "full": 2,
+     "partial": 3,
+     "none": 11,
+     "recall@5": 0.28125
+    }
+   },
+   "rows": [
+    {
+     "id": "D01",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:39의4",
+      "article:act:40",
+      "article:act:41",
+      "article:act:9의3",
+      "article:act:24의3"
+     ]
+    },
+    {
+     "id": "D02",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:36의8",
+      "article:act:2",
+      "article:act:39의4",
+      "article:act:9",
+      "article:act:40"
+     ]
+    },
+    {
+     "id": "D03",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:32",
+      "article:act:40",
+      "article:act:39의4",
+      "article:act:24의3",
+      "article:act:41"
+     ]
+    },
+    {
+     "id": "D04",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:18",
+      "article:act:24의3",
+      "article:act:24의4",
+      "article:act:26의2",
+      "article:act:40"
+     ]
+    },
+    {
+     "id": "D05",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:26의2",
+      "article:act:30의2",
+      "article:act:24의3",
+      "article:act:24의4",
+      "article:act:18"
+     ]
+    },
+    {
+     "id": "D06",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:24의4",
+      "article:decree:3의3",
+      "article:decree:17",
+      "article:act:24의3",
+      "article:decree:14의2"
+     ]
+    },
+    {
+     "id": "D07",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:30",
+      "article:act:35의9",
+      "article:decree:16의3",
+      "article:act:33",
+      "article:act:31"
+     ]
+    },
+    {
+     "id": "D08",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:40",
+      "article:decree:16의4",
+      "article:act:24의3",
+      "article:act:32",
+      "article:decree:14의2"
+     ]
+    },
+    {
+     "id": "D09",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:24의3",
+      "article:decree:14의2",
+      "article:decree:18",
+      "article:act:35의6",
+      "article:decree:17"
+     ]
+    },
+    {
+     "id": "D10",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:decree:14의2",
+      "article:act:24의3",
+      "article:act:24의4",
+      "article:decree:14",
+      "article:decree:12의2"
+     ]
+    },
+    {
+     "id": "D11",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:17",
+      "article:act:24의3",
+      "article:act:31",
+      "article:act:35의2",
+      "article:decree:16의4"
+     ]
+    },
+    {
+     "id": "D12",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.6666666666666666,
+     "retrieved": [
+      "article:decree:17",
+      "article:act:34",
+      "article:decree:18",
+      "article:act:31",
+      "article:act:24의4"
+     ]
+    },
+    {
+     "id": "D13",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "article:act:24의4",
+      "article:decree:14",
+      "article:decree:17",
+      "article:act:31",
+      "article:decree:18"
+     ]
+    },
+    {
+     "id": "D14",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:15의2",
+      "article:act:29",
+      "article:decree:17",
+      "article:act:24의3",
+      "article:act:18"
+     ]
+    },
+    {
+     "id": "D15",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:7",
+      "article:act:30",
+      "article:decree:16의3",
+      "article:act:17",
+      "article:decree:24의7"
+     ]
+    },
+    {
+     "id": "D16",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:30의5",
+      "article:decree:17",
+      "article:act:26",
+      "article:act:24",
+      "article:decree:15의2"
+     ]
+    },
+    {
+     "id": "D01",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:090",
+      "fixed:act:011",
+      "fixed:act:072",
+      "fixed:act:038",
+      "fixed:act:089"
+     ]
+    },
+    {
+     "id": "D02",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:000",
+      "fixed:act:090",
+      "fixed:act:038",
+      "fixed:act:002",
+      "fixed:act:041"
+     ]
+    },
+    {
+     "id": "D03",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:090",
+      "fixed:act:039",
+      "fixed:act:038",
+      "fixed:act:054",
+      "fixed:act:061"
+     ]
+    },
+    {
+     "id": "D04",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:037",
+      "fixed:decree:021",
+      "fixed:act:090",
+      "fixed:act:038",
+      "fixed:decree:002"
+     ]
+    },
+    {
+     "id": "D05",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:037",
+      "fixed:act:000",
+      "fixed:act:054",
+      "fixed:act:070",
+      "fixed:act:044"
+     ]
+    },
+    {
+     "id": "D06",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:002",
+      "fixed:act:039",
+      "fixed:act:004",
+      "fixed:act:036"
+     ]
+    },
+    {
+     "id": "D07",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:057",
+      "fixed:act:052",
+      "fixed:act:069",
+      "fixed:act:053",
+      "fixed:act:058"
+     ]
+    },
+    {
+     "id": "D08",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:090",
+      "fixed:decree:030",
+      "fixed:decree:026",
+      "fixed:decree:045"
+     ]
+    },
+    {
+     "id": "D09",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:039",
+      "fixed:act:054",
+      "fixed:act:038",
+      "fixed:decree:022",
+      "fixed:act:044"
+     ]
+    },
+    {
+     "id": "D10",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:039",
+      "fixed:decree:022",
+      "fixed:act:004",
+      "fixed:act:002",
+      "fixed:decree:018"
+     ]
+    },
+    {
+     "id": "D11",
+     "strategy": "fixed",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:060",
+      "fixed:decree:040",
+      "fixed:decree:042",
+      "fixed:act:067"
+     ]
+    },
+    {
+     "id": "D12",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.6666666666666666,
+     "retrieved": [
+      "fixed:decree:034",
+      "fixed:decree:027",
+      "fixed:decree:040",
+      "fixed:act:041",
+      "fixed:act:058"
+     ]
+    },
+    {
+     "id": "D13",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "fixed:decree:040",
+      "fixed:decree:022",
+      "fixed:act:002",
+      "fixed:act:041",
+      "fixed:decree:039"
+     ]
+    },
+    {
+     "id": "D14",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "fixed:act:050",
+      "fixed:act:000",
+      "fixed:act:051",
+      "fixed:decree:046",
+      "fixed:act:038"
+     ]
+    },
+    {
+     "id": "D15",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:decree:037",
+      "fixed:act:054",
+      "fixed:act:052",
+      "fixed:act:041",
+      "fixed:act:007"
+     ]
+    },
+    {
+     "id": "D16",
+     "strategy": "fixed",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:043",
+      "fixed:decree:032",
+      "fixed:act:057",
+      "fixed:act:039",
+      "fixed:decree:040"
+     ]
+    }
+   ],
+   "full_total": 7,
+   "recall@5_mean": 0.328125
+  },
+  {
+   "model": "text-embedding-3-large",
+   "retrieval": "hybrid",
+   "by_strategy": {
+    "article": {
+     "full": 7,
+     "partial": 3,
+     "none": 6,
+     "recall@5": 0.53125
+    },
+    "fixed": {
+     "full": 3,
+     "partial": 7,
+     "none": 6,
+     "recall@5": 0.625
+    }
+   },
+   "rows": [
+    {
+     "id": "D01",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "article:act:26",
+      "article:act:24의4",
+      "article:act:24의3",
+      "article:decree:18",
+      "article:act:40"
+     ]
+    },
+    {
+     "id": "D02",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:26",
+      "article:act:24의3",
+      "article:act:24의4",
+      "article:decree:3의3",
+      "article:decree:3"
+     ]
+    },
+    {
+     "id": "D03",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:18",
+      "article:act:39의4",
+      "article:act:24의3",
+      "article:act:41",
+      "article:act:26"
+     ]
+    },
+    {
+     "id": "D04",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:18",
+      "article:decree:3",
+      "article:act:24의3",
+      "article:act:40",
+      "article:decree:14"
+     ]
+    },
+    {
+     "id": "D05",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:3",
+      "article:act:24의2",
+      "article:act:26의2",
+      "article:act:38의3",
+      "article:act:24의3"
+     ]
+    },
+    {
+     "id": "D06",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:decree:3의3",
+      "article:act:24의4",
+      "article:act:24의3",
+      "article:act:36의3",
+      "article:decree:17"
+     ]
+    },
+    {
+     "id": "D07",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:31",
+      "article:act:35의9",
+      "article:act:33",
+      "article:act:30",
+      "article:act:29"
+     ]
+    },
+    {
+     "id": "D08",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:40",
+      "article:decree:18",
+      "article:act:32",
+      "article:act:24의3",
+      "article:decree:12의2"
+     ]
+    },
+    {
+     "id": "D09",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:decree:18",
+      "article:act:35의6",
+      "article:act:24의3",
+      "article:act:26",
+      "article:act:31"
+     ]
+    },
+    {
+     "id": "D10",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:decree:14의2",
+      "article:act:24의4",
+      "article:decree:12의2",
+      "article:act:38의5",
+      "article:act:24의3"
+     ]
+    },
+    {
+     "id": "D11",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:31",
+      "article:act:21의2",
+      "article:decree:17",
+      "article:act:35의8",
+      "article:act:21의4"
+     ]
+    },
+    {
+     "id": "D12",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.6666666666666666,
+     "retrieved": [
+      "article:act:31",
+      "article:decree:17",
+      "article:act:34",
+      "article:decree:18",
+      "article:act:30"
+     ]
+    },
+    {
+     "id": "D13",
+     "strategy": "article",
+     "coverage": "partial",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "article:act:31",
+      "article:decree:17",
+      "article:decree:18",
+      "article:decree:14",
+      "article:act:32"
+     ]
+    },
+    {
+     "id": "D14",
+     "strategy": "article",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "article:act:29",
+      "article:decree:18",
+      "article:decree:15의2",
+      "article:decree:17",
+      "article:decree:19의2"
+     ]
+    },
+    {
+     "id": "D15",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:31",
+      "article:act:7",
+      "article:act:3",
+      "article:act:30",
+      "article:decree:24의7"
+     ]
+    },
+    {
+     "id": "D16",
+     "strategy": "article",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "article:act:26",
+      "article:decree:17",
+      "article:act:24",
+      "article:act:24의3",
+      "article:decree:14"
+     ]
+    },
+    {
+     "id": "D01",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "fixed:act:005",
+      "fixed:decree:046",
+      "fixed:act:004",
+      "fixed:act:044",
+      "fixed:act:039"
+     ]
+    },
+    {
+     "id": "D02",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:041",
+      "fixed:act:038",
+      "fixed:act:039",
+      "fixed:act:004",
+      "fixed:act:037"
+     ]
+    },
+    {
+     "id": "D03",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:061",
+      "fixed:decree:046",
+      "fixed:act:039",
+      "fixed:act:037",
+      "fixed:act:038"
+     ]
+    },
+    {
+     "id": "D04",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:decree:046",
+      "fixed:decree:044",
+      "fixed:decree:002",
+      "fixed:decree:043",
+      "fixed:decree:047"
+     ]
+    },
+    {
+     "id": "D05",
+     "strategy": "fixed",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:decree:003",
+      "fixed:act:037",
+      "fixed:act:061",
+      "fixed:act:079",
+      "fixed:act:045"
+     ]
+    },
+    {
+     "id": "D06",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:act:004",
+      "fixed:act:005",
+      "fixed:act:039",
+      "fixed:act:000"
+     ]
+    },
+    {
+     "id": "D07",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:057",
+      "fixed:act:053",
+      "fixed:act:052",
+      "fixed:act:069",
+      "fixed:act:062"
+     ]
+    },
+    {
+     "id": "D08",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:decree:045",
+      "fixed:decree:025",
+      "fixed:act:060",
+      "fixed:decree:041"
+     ]
+    },
+    {
+     "id": "D09",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:038",
+      "fixed:decree:046",
+      "fixed:decree:045",
+      "fixed:decree:044",
+      "fixed:act:065"
+     ]
+    },
+    {
+     "id": "D10",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:039",
+      "fixed:act:005",
+      "fixed:decree:022",
+      "fixed:act:004",
+      "fixed:act:082"
+     ]
+    },
+    {
+     "id": "D11",
+     "strategy": "fixed",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:060",
+      "fixed:decree:040",
+      "fixed:act:058",
+      "fixed:act:067",
+      "fixed:act:061"
+     ]
+    },
+    {
+     "id": "D12",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.6666666666666666,
+     "retrieved": [
+      "fixed:act:052",
+      "fixed:act:058",
+      "fixed:decree:034",
+      "fixed:act:060",
+      "fixed:decree:040"
+     ]
+    },
+    {
+     "id": "D13",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.3333333333333333,
+     "retrieved": [
+      "fixed:act:052",
+      "fixed:decree:040",
+      "fixed:act:062",
+      "fixed:act:038",
+      "fixed:decree:022"
+     ]
+    },
+    {
+     "id": "D14",
+     "strategy": "fixed",
+     "coverage": "partial",
+     "recall@5": 0.5,
+     "retrieved": [
+      "fixed:act:050",
+      "fixed:act:051",
+      "fixed:decree:048",
+      "fixed:decree:046",
+      "fixed:act:061"
+     ]
+    },
+    {
+     "id": "D15",
+     "strategy": "fixed",
+     "coverage": "none",
+     "recall@5": 0.0,
+     "retrieved": [
+      "fixed:act:007",
+      "fixed:act:008",
+      "fixed:decree:002",
+      "fixed:act:054",
+      "fixed:act:053"
+     ]
+    },
+    {
+     "id": "D16",
+     "strategy": "fixed",
+     "coverage": "full",
+     "recall@5": 1.0,
+     "retrieved": [
+      "fixed:act:061",
+      "fixed:decree:045",
+      "fixed:act:057",
+      "fixed:decree:040",
+      "fixed:decree:032"
+     ]
+    }
+   ],
+   "full_total": 10,
+   "recall@5_mean": 0.578125
+  }
+ ],
+ "chosen": {
+  "model": "text-embedding-3-large",
+  "retrieval": "hybrid"
+ }
+}
