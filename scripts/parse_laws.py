@@ -7,9 +7,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from rag_chatbot.parsing import parse_law_html  # noqa: E402
+from fetch_laws import raw_path
 
-from fetch_laws import raw_path  # noqa: E402
+from rag_chatbot.parsing import parse_law_html
 
 
 def main() -> None:

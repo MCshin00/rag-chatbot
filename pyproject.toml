@@ -5,7 +5,15 @@ description = "예금자보호 법령 기반 RAG 챗봇"
 requires-python = ">=3.14"
 dependencies = [
     "beautifulsoup4>=4.15.0",
+    "langchain-core>=1",
+    "langchain-openai>=1",
+    "langchain-text-splitters>=1",
+    "langgraph>=1",
     "lxml>=6.1.3",
+    "numpy>=2.5.4",
+    "pgvector>=0.3",
+    "psycopg[binary]>=3.2",
+    "python-dotenv>=1.2.4",
 ]
 
 [tool.pytest.ini_options]
@@ -15,4 +23,11 @@ pythonpath = ["src"]
 [dependency-groups]
 dev = [
     "pytest>=9.1.1",
+    "ruff>=0.17.2",
 ]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ISC004", "FLY002"]
