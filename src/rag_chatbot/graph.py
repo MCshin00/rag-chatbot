@@ -52,12 +52,12 @@ def make_chat_model():
     )
 
 
-def build_graph(search: Callable[[list[float]], list[dict]], chat_model, system_prompt: str = SYSTEM_PROMPT_P1):
-    """search: 질문 벡터 → 상위 k개 조각. chat_model: LangChain 채팅 모델(테스트에서는 가짜)."""
+def build_graph(search: Callable[[str, list[float]], list[dict]], chat_model, system_prompt: str = SYSTEM_PROMPT_P1):
+    """search: (질문, 질문 벡터) → 상위 k개 조각. chat_model: LangChain 채팅 모델(테스트에서는 가짜)."""
     structured = chat_model.with_structured_output(Answer, method="json_schema", strict=True, include_raw=True)
 
     def retrieve(state: State) -> State:
-        return {"retrieved": search(state["query_vec"])}
+        return {"retrieved": search(state["question"], state["query_vec"])}
 
     def generate(state: State) -> State:
         if not state["retrieved"]:

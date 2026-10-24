@@ -18,9 +18,11 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from rag_chatbot import config, store
 from rag_chatbot.corpus import load_corpus
-from rag_chatbot.embedding import EMBEDDING_PRICE_PER_1M, count_tokens, embed
+from rag_chatbot.embedding import QueryCache, count_tokens
+from rag_chatbot.embedding import cost as embedding_cost
 from rag_chatbot.graph import SYSTEM_PROMPT_P1, build_graph, format_context, make_chat_model
 from rag_chatbot.metrics import article_recall, evidence_coverage
+from rag_chatbot.retrieval import make_search
 
 CHAT_PRICE = {"input": 0.75, "cached_input": 0.075, "output": 4.50}  # $/1M, 2026-10-24 공식 모델 페이지
 PRICE_CHECKED = "2026-10-24"
@@ -68,37 +70,31 @@ def main() -> None:
         questions = [q for q in questions if q["id"] in wanted]
     corpus = load_corpus()
 
-    cache = json.loads(QUERY_CACHE.read_text(encoding="utf-8")) if QUERY_CACHE.exists() else {}
-    def qkey(q):
-        return hashlib.sha256(f"{config.EMBEDDING_MODEL}|{q['question']}".encode()).hexdigest()
-    missing = [q for q in questions if qkey(q) not in cache]
+    model = config.EMBEDDING_MODEL
+    cache = QueryCache(QUERY_CACHE)
+    missing = cache.missing(model, [q["question"] for q in questions])
 
     conn = store.connect()
-    n_chunks = store.count(conn, args.strategy)
-    if n_chunks == 0:
-        sys.exit(f"{args.strategy} 조각이 색인돼 있지 않다. scripts/index_chunks.py --execute 먼저")
-    avg = conn.execute("SELECT avg(length(text)) FROM chunks WHERE strategy=%s", (args.strategy,)).fetchone()[0]
+    if store.count(conn, model, args.strategy) == 0:
+        sys.exit(f"{model} {args.strategy} 조각이 색인돼 있지 않다. scripts/index_chunks.py --execute 먼저")
+    avg = conn.execute("SELECT avg(length(text)) FROM chunks WHERE model=%s AND strategy=%s",
+                       (model, args.strategy)).fetchone()[0]
     sample_ctx = "가" * int(float(avg)) * config.TOP_K
     in_tokens = count_tokens([SYSTEM_PROMPT_P1, sample_ctx]) + 200
     upper = len(questions) * (in_tokens * CHAT_PRICE["input"] + config.MAX_OUTPUT_TOKENS * CHAT_PRICE["output"]) / 1e6
-    q_tokens = count_tokens([q["question"] for q in missing]) if missing else 0
+    q_tokens = count_tokens(missing) if missing else 0
     print(f"문항 {len(questions)}개, 방식 {args.strategy}, 모델 {config.CHAT_MODEL} (effort {config.REASONING_EFFORT})")
-    print(f"질문 임베딩: 새로 {len(missing)}개, 요청 {1 if missing else 0}회, 약 ${q_tokens * EMBEDDING_PRICE_PER_1M / 1e6:.5f}")
+    print(f"검색: {config.RETRIEVAL}, 임베딩 {model}")
+    print(f"질문 임베딩: 새로 {len(missing)}개, 요청 {1 if missing else 0}회, 약 ${embedding_cost(q_tokens, model):.5f}")
     print(f"생성: {len(questions)}회, 1회 입력 약 {in_tokens:,} 토큰(추정), 출력 최대 {config.MAX_OUTPUT_TOKENS}")
     print(f"생성 비용 상한(출력이 모두 최대일 때): 약 ${upper:.3f}")
     if not args.execute:
         print("추정만 했다. 실제 실행은 --execute")
         return
 
+    used = cache.fill(model, missing)
     if missing:
-        vecs, used = embed([q["question"] for q in missing])
-        for q, v in zip(missing, vecs):
-            cache[qkey(q)] = v
-        QUERY_CACHE.parent.mkdir(parents=True, exist_ok=True)
-        QUERY_CACHE.write_text(json.dumps(cache), encoding="utf-8")
         print(f"질문 임베딩 {len(missing)}개, 실제 {used} 토큰")
-    else:
-        used = 0
 
     split = "dev" if questions and questions[0]["id"].startswith("D") else "heldout"
     run_id = f"{datetime.now().strftime('%Y%m%d-%H%M%S')}-{args.tag}-{split}-{args.strategy}"
@@ -110,7 +106,8 @@ def main() -> None:
         "question_ids": [q["id"] for q in questions],
         "chat_model": config.CHAT_MODEL, "reasoning_effort": config.REASONING_EFFORT,
         "max_output_tokens": config.MAX_OUTPUT_TOKENS, "top_k": config.TOP_K,
-        "embedding_model": config.EMBEDDING_MODEL, "embed_with_law_name": config.EMBED_WITH_LAW_NAME,
+        "embedding_model": model, "embed_with_law_name": config.EMBED_WITH_LAW_NAME,
+        "retrieval": config.RETRIEVAL, "hybrid_pool": config.HYBRID_POOL, "rrf_k": config.RRF_K,
         "prompt_version": config.PROMPT_VERSION, "system_prompt": SYSTEM_PROMPT_P1,
         "retries": 0, "prices_usd_per_1m": CHAT_PRICE, "price_checked": PRICE_CHECKED,
         "query_embedding_tokens": used, "git": git_state(),
@@ -118,11 +115,11 @@ def main() -> None:
     }
     (run_dir / "meta.json").open("x", encoding="utf-8").write(json.dumps(meta, ensure_ascii=False, indent=2))
 
-    graph = build_graph(lambda vec: store.search(conn, args.strategy, vec, config.TOP_K), make_chat_model())
+    graph = build_graph(make_search(conn, model, args.strategy, config.RETRIEVAL, config.TOP_K), make_chat_model())
     tally, cost, calls = Counter(), 0.0, 0
     with (run_dir / "results.jsonl").open("x", encoding="utf-8") as out:
         for q in questions:
-            state = graph.invoke({"question": q["question"], "query_vec": cache[qkey(q)]})
+            state = graph.invoke({"question": q["question"], "query_vec": cache.get(model, q["question"])})
             calls += 0 if state["raw"].get("skipped") else 1
             retrieved = state["retrieved"]
             spans = [r["span"] for r in retrieved]

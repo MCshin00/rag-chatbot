@@ -2,6 +2,7 @@
 
 from rag_chatbot.corpus import Span, article_chunks, fixed_chunks, load_corpus, locate_quote
 from rag_chatbot.graph import Answer, build_graph
+from rag_chatbot.lexical import BM25, bigrams, rrf
 from rag_chatbot.metrics import article_recall, covered, evidence_coverage
 
 CORPUS = load_corpus()
@@ -63,7 +64,7 @@ class FakeChat:
 
 def run(parsed=None, error=None, retrieved=None):
     retrieved = [{"law_name": "예금자보호법", "text": "본문", "span": Span("act", 0, 2)}] if retrieved is None else retrieved
-    graph = build_graph(lambda vec: retrieved, FakeChat(parsed, error))
+    graph = build_graph(lambda question, vec: retrieved, FakeChat(parsed, error))
     return graph.invoke({"question": "질문", "query_vec": [0.0]})["final"]
 
 
@@ -80,3 +81,11 @@ def test_model_abstain_and_errors_are_separated():
     assert run(Answer(answer="확인할 수 없다", citations=[], abstain=True))["reason"] == "model"
     assert run(error=TimeoutError())["status"] == "error"  # 실행 오류는 보류가 아니다
     assert run(retrieved=[])["reason"] == "no_retrieval"
+
+
+def test_bm25_bigrams_match_through_particles_and_rrf_merges():
+    assert "한도" in bigrams("지급한도는")  # 조사가 붙어도 같은 두 글자가 남는다
+    docs = ["보험금의 지급한도는 1억원으로 한다", "양도성예금증서는 예금등에 포함되지 아니한다", "벌칙"]
+    scores = BM25(docs).scores("CD 양도성예금증서도 보호되나요")
+    assert max(range(3), key=scores.__getitem__) == 1
+    assert rrf([["a", "b", "c"], ["c", "a"]], 60)[:2] == ["a", "c"]

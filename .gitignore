@@ -17,3 +17,6 @@ __pycache__/
 
 # 계획·인계 메모(공개하지 않음)
 .local/
+
+# 질문 임베딩 캐시(벡터, 다시 만들 수 있음)
+eval/runs/query_embeddings.json
