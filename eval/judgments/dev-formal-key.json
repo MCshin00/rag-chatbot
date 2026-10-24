@@ -1,0 +1,82 @@
+{
+  "D01": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "D02": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "D03": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D04": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D05": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D06": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D07": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D08": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "D09": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "D10": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "D11": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "D12": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D13": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D14": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D15": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D16": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D17": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "D18": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "D19": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "D20": {
+    "A": "fixed",
+    "B": "article"
+  }
+}
