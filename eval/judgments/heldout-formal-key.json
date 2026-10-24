@@ -1,0 +1,42 @@
+{
+  "H01": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "H02": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "H03": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "H04": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "H05": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "H06": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "H07": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "H08": {
+    "A": "article",
+    "B": "fixed"
+  },
+  "H09": {
+    "A": "fixed",
+    "B": "article"
+  },
+  "H10": {
+    "A": "fixed",
+    "B": "article"
+  }
+}
